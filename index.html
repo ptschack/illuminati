@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="scripts.js"></script>
+    <title>Illuminati Attack</title>
+</head>
+
+<body onload="resetAll()">
+    <div class="main">
+        <h1>Illuminati Attack Calculator</h1>
+        <table>
+            <tr>
+                <td><label for="attackMode">Attack Mode</label></td>
+                <td>
+                    <select id="attackMode" onChange="calculate()" >
+                        <option value="control" selected="selected">Control</option>
+                        <option value="neutralize">Neutralize</option>
+                        <option value="destroy">Destroy</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="attackerValue">Attacker's Power</label></td>
+                <td><input id="attackerValue" type="number" min="0" step="1" value="0" onChange="calculate()" /></td>
+            </tr>
+            <tr>
+                <td><label for="targetValue">Target Resistance</label></td>
+                <td><input id="targetValue" type="number" min="0" step="1" value="0" onChange="calculate()" /></td>
+            </tr>
+            <tr>
+                <td><label for="proximity">Target Proximity To Illuminati</label></td>
+                <td>
+                    <select id="proximity"onChange="calculate()" >
+                        <option value="0" selected="selected">more than 2</option>
+                        <option value="2">2 between</option>
+                        <option value="5">1 between</option>
+                        <option value="10">Direct</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="attackerAlignment">Attacker Alignment</label></td>
+                <td><select id="attackerAlignment" size="6" multiple onChange="calculate()" >
+                        <option>Government</option>
+                        <option>Liberal</option>
+                        <option>Peaceful</option>
+                        <option>Straight</option>
+                        <option>Criminal</option>
+                        <option>Fanatic</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="defenderAlignment">Defender Alignment</label></td>
+                <td><select id="defenderAlignment" size="6" multiple onChange="calculate()" >
+                        <option>Government</option>
+                        <option>Liberal</option>
+                        <option>Peaceful</option>
+                        <option>Straight</option>
+                        <option>Criminal</option>
+                        <option>Fanatic</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="transferablePower">Transferable Power</label></td>
+                <td><input id="transferablePower" type="number" min="0" step="1" value="0" onChange="calculate()" />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="attackerMoney">Attacker Investment</label></td>
+                <td><input id="attackerMoney" type="number" min="0" step="1" value="0" onChange="calculate()" /></td>
+            </tr>
+            <tr>
+                <td><label for="defenderMoney">Defending Group Investment</label></td>
+                <td><input id="defenderGroupMoney" type="number" min="0" step="1" value="0" onChange="calculate()" />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="defenderMoney">Defending Illuminati Investment</label></td>
+                <td><input id="defenderIlluminatiMoney" type="number" min="0" step="1" value="0"
+                        onChange="calculate()" /></td>
+            </tr>
+            <tr>
+                <td><label for="otherIlluminatiAssist">Other Illuminati Assist</label></td>
+                <td><input id="otherIlluminatiAssist" type="number" min="0" step="1" value="0" onChange="calculate()" />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="otherIlluminatiInterfere">Other Illuminati Interfere</label></td>
+                <td><input id="otherIlluminatiInterfere" type="number" min="0" step="1" value="0"
+                        onChange="calculate()" /></td>
+            </tr>
+        </table>
+        <h1 id="result">0</h1><br>
+        <button type="button" onclick="resetAll()">clear</button>
+    </div>
+</body>
+
+</html>
