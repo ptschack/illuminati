@@ -101,9 +101,8 @@ function calculate() {
     var sameCounter = countSameAlignments(attackerAlignments, defenderAlignments);
     var attackerMoney = parseInt(document.getElementById('attackerMoney').value);
     var defenderMoney = parseInt(document.getElementById('defenderMoney').value);
-    var defenderIlluminatiMoney = parseInt(document.getElementById('defenderIlluminatiMoney').value);
-    var otherIlluminatiAssist = parseInt(document.getElementById('otherIlluminatiAssist').value);
-    var otherIlluminatiInterfere = parseInt(document.getElementById('otherIlluminatiInterfere').value);
+    var illuminatiAssist = parseInt(document.getElementById('illuminatiAssist').value);
+    var illuminatiInterfere = parseInt(document.getElementById('illuminatiInterfere').value);
     var proximityMod = parseInt(Array.from(document.getElementById('proximityMod').options)
         .find(e => e.selected)
         .value);
@@ -126,9 +125,8 @@ function calculate() {
 
     result += attackerMoney;
     result -= defenderMoney * 2;
-    result -= defenderIlluminatiMoney;
-    result += otherIlluminatiAssist;
-    result -= otherIlluminatiInterfere;
+    result += illuminatiAssist;
+    result -= illuminatiInterfere;
     result -= proximityMod;
 
     document.getElementById('result').innerHTML = result;

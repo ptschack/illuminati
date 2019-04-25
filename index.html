@@ -14,33 +14,64 @@
         <h1>Illuminati Attack Calculator</h1>
         <table>
             <tr>
-                <td><label for="attackMode">Attack Mode</label></td>
-                <td>
-                    <select id="attackMode" onChange="attackModeChanged()" >
+                <td class="left"><label for="attackMode">Attack Mode</label></td>
+                <td class="right">
+                    <select id="attackMode" onChange="attackModeChanged()">
                         <option value="control" selected="selected">Control</option>
                         <option value="neutralize">Neutralize</option>
                         <option value="destroy">Destroy</option>
                     </select>
                 </td>
             </tr>
+        </table>
+        <h3>Attacker</h3>
+        <table>
             <tr>
-                <td><label for="attackerPower">Attacker's Power</label></td>
-                <td><input id="attackerPower" type="number" min="0" step="1" value="0" onChange="calculate()" /></td>
+                <td class="left"><label for="attackerPower">Power</label></td>
+                <td class="right"><input id="attackerPower" type="number" min="0" step="1" value="0" onChange="calculate()" /></td>
             </tr>
             <tr>
-                <td>
-                    <label id="targetResistanceLabel" for="targetResistance">Target Resistance</label>
-                    <label id="targetPowerLabel" for="targetPower">Target Power</label>
+                <td class="left"><label for="transferablePower">Transferable Power</label></td>
+                <td class="right"><input id="transferablePower" type="number" min="0" step="1" value="0" onChange="calculate()" />
                 </td>
-                <td>
+            </tr>
+            <tr>
+                <td class="left"><label for="attackerAlignment">Alignment</label></td>
+                <td class="right"><select id="attackerAlignment" size="6" multiple onChange="calculate()">
+                        <option value="government">Government</option>
+                        <option value="communist">Communist</option>
+                        <option value="liberal">Liberal</option>
+                        <option value="conservative">Conservative</option>
+                        <option value="peaceful">Peaceful</option>
+                        <option value="violent">Violent</option>
+                        <option value="straight">Straight</option>
+                        <option value="weird">Weird</option>
+                        <option value="criminal">Criminal</option>
+                        <option value="fanatic">Fanatic</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="left"><label for="attackerMoney">Investment</label></td>
+                <td class="right"><input id="attackerMoney" type="number" min="0" step="1" value="0" onChange="calculate()" /></td>
+            </tr>
+        </table>
+        <h3>Defender</h3>
+        <table>
+            <tr>
+                <td class="left">
+                    <label id="targetResistanceLabel" for="targetResistance">Resistance</label>
+                    <label id="targetPowerLabel" for="targetPower">Power</label>
+                </td>
+                <td class="right">
                     <input id="targetResistance" type="number" min="0" step="1" value="0" onChange="calculate()" />
                     <input id="targetPower" type="number" min="0" step="1" value="0" onChange="calculate()" />
                 </td>
             </tr>
             <tr>
-                <td><label for="proximityMod">Target Proximity To Illuminati</label></td>
-                <td>
-                    <select id="proximityMod"onChange="calculate()" >
+                <td class="left"><label for="proximityMod">Proximity To Illuminati</label></td>
+                <td class="right">
+                    <select id="proximityMod" onChange="calculate()">
                         <option value="0" selected="selected">more than 2</option>
                         <option value="2">2 between</option>
                         <option value="5">1 between</option>
@@ -49,8 +80,8 @@
                 </td>
             </tr>
             <tr>
-                <td><label for="attackerAlignment">Attacker Alignment</label></td>
-                <td><select id="attackerAlignment" size="6" multiple onChange="calculate()" >
+                <td class="left"><label for="defenderAlignment">Alignment</label></td>
+                <td class="right"><select id="defenderAlignment" size="6" multiple onChange="calculate()">
                         <option value="government">Government</option>
                         <option value="communist">Communist</option>
                         <option value="liberal">Liberal</option>
@@ -65,48 +96,21 @@
                 </td>
             </tr>
             <tr>
-                <td><label for="defenderAlignment">Defender Alignment</label></td>
-                <td><select id="defenderAlignment" size="6" multiple onChange="calculate()" >
-                        <option value="government">Government</option>
-                        <option value="communist">Communist</option>
-                        <option value="liberal">Liberal</option>
-                        <option value="conservative">Conservative</option>
-                        <option value="peaceful">Peaceful</option>
-                        <option value="violent">Violent</option>
-                        <option value="straight">Straight</option>
-                        <option value="weird">Weird</option>
-                        <option value="criminal">Criminal</option>
-                        <option value="fanatic">Fanatic</option>
-                    </select>
+                <td class="left"><label for="defenderMoney">Investment</label></td>
+                <td class="right"><input id="defenderMoney" type="number" min="0" step="1" value="0" onChange="calculate()" />
+                </td>
+            </tr>
+        </table>
+        <h3>Others</h3>
+        <table>
+            <tr>
+                <td class="left"><label for="illuminatiAssist">Illuminati Assist</label></td>
+                <td class="right"><input id="illuminatiAssist" type="number" min="0" step="1" value="0" onChange="calculate()" />
                 </td>
             </tr>
             <tr>
-                <td><label for="transferablePower">Transferable Power</label></td>
-                <td><input id="transferablePower" type="number" min="0" step="1" value="0" onChange="calculate()" />
-                </td>
-            </tr>
-            <tr>
-                <td><label for="attackerMoney">Attacker Investment</label></td>
-                <td><input id="attackerMoney" type="number" min="0" step="1" value="0" onChange="calculate()" /></td>
-            </tr>
-            <tr>
-                <td><label for="defenderMoney">Defending Group Investment</label></td>
-                <td><input id="defenderMoney" type="number" min="0" step="1" value="0" onChange="calculate()" />
-                </td>
-            </tr>
-            <tr>
-                <td><label for="defenderMoney">Defending Illuminati Investment</label></td>
-                <td><input id="defenderIlluminatiMoney" type="number" min="0" step="1" value="0"
-                        onChange="calculate()" /></td>
-            </tr>
-            <tr>
-                <td><label for="otherIlluminatiAssist">Other Illuminati Assist</label></td>
-                <td><input id="otherIlluminatiAssist" type="number" min="0" step="1" value="0" onChange="calculate()" />
-                </td>
-            </tr>
-            <tr>
-                <td><label for="otherIlluminatiInterfere">Other Illuminati Interfere</label></td>
-                <td><input id="otherIlluminatiInterfere" type="number" min="0" step="1" value="0"
+                <td class="left"><label for="illuminatiInterfere">Illuminati Interfere</label></td>
+                <td class="right"><input id="illuminatiInterfere" type="number" min="0" step="1" value="0"
                         onChange="calculate()" /></td>
             </tr>
         </table>
